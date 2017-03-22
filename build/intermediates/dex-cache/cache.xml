@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_2242b82b428866ef8663b20d05ccf39e14da8a81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_405ba5c6c33d68d0971879064ba7d53aaa872c59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_6b55dbb0ab287ec38da2a339abf253b71949dcbd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_4cfb0f7bd80467bf99f4f642f9dc69e7437d8647.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/reactive-streams-1.0.0_ed991b3b6233dea45a670ed58a46475ec33c36d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_a212a30eefdfd204bede42c2c90fc823b0045e29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.1/57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb/rxjava-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/rxjava-2.0.1_3e01f7cde901461034c8830ac2206a04a490ea40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/io.reactivex.rxjava2/rxandroid/2.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/io.reactivex.rxjava2-rxandroid-2.0.1_9e4a05cb47041d8cf2b7eefb8e3fa3faabc4a6cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.0.1_55ab0a49edf506ac2af7b2f81fcf71d34bd09b42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_634b2bb4423eaa02a328b7cf6ba737c8a92956a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_eb53510fd93a37e4645c7fff308138b1dd8c6ab0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_aeea50feecb7517b6f3cf0258f29d05a89f5bc39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_331ce9af3e67a55e3b817ef2934378209dab3481.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_79e9113ba9958b33a7c4f9a19f804bfecb0b3ed9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.1_353464be8c58ddf728db45182e415a4843f3e9f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_5378ce4264a2f3cb3f71c7ee60fd4d0e3f3f9a0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_7f2c1b60535bdd1544bea931cc66914616b04891.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_596dfa9f97cc825c7ce3224fb87d50b3549b476f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/akshay/Downloads/CheeseFinder-starter/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_208f922ecaf6ed58faf9bdd31ef1e8e6a58a7f54.jar" />
+    </item>
+
+</items>
