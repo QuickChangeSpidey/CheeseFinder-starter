@@ -28,6 +28,7 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.functions.Cancellable;
+import io.reactivex.functions.Consumer;
 
 public class CheeseActivity extends BaseSearchActivity {
 
@@ -59,6 +60,24 @@ public class CheeseActivity extends BaseSearchActivity {
                 });
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // 1
+        Observable<String> searchTextObservable = createButtonClickObservable();
+
+        searchTextObservable
+                // 2
+                .subscribe(new Consumer<String>() {
+                    //3
+                    @Override
+                    public void accept(String query) throws Exception {
+                        // 4
+                        showResult(mCheeseSearchEngine.search(query));
+                    }
+                });
     }
 
 }
