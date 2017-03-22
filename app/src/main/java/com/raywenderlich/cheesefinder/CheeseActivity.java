@@ -24,11 +24,16 @@ package com.raywenderlich.cheesefinder;
 
 import android.view.View;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Cancellable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 public class CheeseActivity extends BaseSearchActivity {
 
@@ -65,19 +70,25 @@ public class CheeseActivity extends BaseSearchActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // 1
         Observable<String> searchTextObservable = createButtonClickObservable();
 
         searchTextObservable
+                // 1
+                .observeOn(Schedulers.io())
                 // 2
-                .subscribe(new Consumer<String>() {
-                    //3
+                .map(new Function<String, List<String>>() {
                     @Override
-                    public void accept(String query) throws Exception {
-                        // 4
-                        showResult(mCheeseSearchEngine.search(query));
+                    public List<String> apply(String query) {
+                        return mCheeseSearchEngine.search(query);
+                    }
+                })
+                // 3
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<String>>() {
+                    @Override
+                    public void accept(List<String> result) {
+                        showResult(result);
                     }
                 });
     }
-
 }
