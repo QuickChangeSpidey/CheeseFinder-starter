@@ -25,9 +25,7 @@ package com.raywenderlich.cheesefinder;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-
 import java.util.List;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -35,33 +33,25 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Cancellable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 public class CheeseActivity extends BaseSearchActivity {
 
-    // 1
     private Observable<String> createButtonClickObservable() {
-
-        // 2
         return Observable.create(new ObservableOnSubscribe<String>() {
-
-            // 3
             @Override
             public void subscribe(final ObservableEmitter<String> emitter) throws Exception {
-                // 4
                 mSearchButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // 5
                         emitter.onNext(mQueryEditText.getText().toString());
                     }
                 });
 
-                // 6
-                emitter.setCancellable(new Cancellable() {
+                 emitter.setCancellable(new Cancellable() {
                     @Override
                     public void cancel() throws Exception {
-                        // 7
                         mSearchButton.setOnClickListener(null);
                     }
                 });
@@ -71,31 +61,21 @@ public class CheeseActivity extends BaseSearchActivity {
 
 
     private  Observable<String> createTextChangeObservable (){
-
         Observable<String> textChangeObservable = Observable.create(new ObservableOnSubscribe<String>() {
-
-
             @Override
             public void subscribe(final ObservableEmitter<String> emitter) throws Exception {
-
                 final TextWatcher watcher = new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                     }
-
                     @Override
                     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                         emitter.onNext(charSequence.toString());
                     }
-
                     @Override
                     public void afterTextChanged(Editable editable) {
-
-
                     }
-
                 };
 
                 mQueryEditText.addTextChangedListener(watcher);
@@ -105,16 +85,20 @@ public class CheeseActivity extends BaseSearchActivity {
                         mQueryEditText.removeTextChangedListener(watcher);
                     }
                 });
-
             }
         });
-            return textChangeObservable;
+            return textChangeObservable.filter(new Predicate<String>() {
+                @Override
+                public boolean test(String s) throws Exception {
+                    return s.length()>2;
+                }
+            });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
+        //Create Button Observable
         Observable<String> searchTextObservable = createButtonClickObservable();
         searchTextObservable
                 .observeOn(AndroidSchedulers.mainThread())
@@ -133,7 +117,6 @@ public class CheeseActivity extends BaseSearchActivity {
                 })
 
                 .observeOn(AndroidSchedulers.mainThread())
-
                 .subscribe(new Consumer<List<String>>() {
                     @Override
                     public void accept(List<String> result) {
@@ -141,6 +124,7 @@ public class CheeseActivity extends BaseSearchActivity {
                         showResult(result);
                     }
                 });
+
 
         Observable<String> createTextObservable = createTextChangeObservable();
         createTextObservable
@@ -160,7 +144,6 @@ public class CheeseActivity extends BaseSearchActivity {
                 })
 
                 .observeOn(AndroidSchedulers.mainThread())
-
                 .subscribe(new Consumer<List<String>>() {
                     @Override
                     public void accept(List<String> result) {
@@ -169,10 +152,5 @@ public class CheeseActivity extends BaseSearchActivity {
                     }
                 });
     }
-
-
-
-
-
 
 }
