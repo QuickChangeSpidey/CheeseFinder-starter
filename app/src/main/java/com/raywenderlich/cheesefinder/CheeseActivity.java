@@ -74,7 +74,7 @@ public class CheeseActivity extends BaseSearchActivity {
 
         searchTextObservable
 
-                .observeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
 
                 .doOnNext(new Consumer<String>() {
                     @Override
@@ -82,6 +82,7 @@ public class CheeseActivity extends BaseSearchActivity {
                         showProgressBar();
                     }
                 })
+                .observeOn(Schedulers.io())
 
                 .map(new Function<String, List<String>>() {
                     @Override
