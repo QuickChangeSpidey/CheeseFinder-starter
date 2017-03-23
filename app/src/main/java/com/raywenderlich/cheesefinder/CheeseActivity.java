@@ -73,20 +73,29 @@ public class CheeseActivity extends BaseSearchActivity {
         Observable<String> searchTextObservable = createButtonClickObservable();
 
         searchTextObservable
-                // 1
+
                 .observeOn(Schedulers.io())
-                // 2
+
+                .doOnNext(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        showProgressBar();
+                    }
+                })
+
                 .map(new Function<String, List<String>>() {
                     @Override
                     public List<String> apply(String query) {
                         return mCheeseSearchEngine.search(query);
                     }
                 })
-                // 3
+
                 .observeOn(AndroidSchedulers.mainThread())
+
                 .subscribe(new Consumer<List<String>>() {
                     @Override
                     public void accept(List<String> result) {
+                        hideProgressBar();
                         showResult(result);
                     }
                 });
