@@ -22,6 +22,8 @@
 
 package com.raywenderlich.cheesefinder;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import java.util.List;
@@ -67,15 +69,55 @@ public class CheeseActivity extends BaseSearchActivity {
         });
     }
 
+
+    private  Observable<String> createTextChangeObservable (){
+
+        Observable<String> textChangeObservable = Observable.create(new ObservableOnSubscribe<String>() {
+
+
+            @Override
+            public void subscribe(final ObservableEmitter<String> emitter) throws Exception {
+
+                final TextWatcher watcher = new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                        emitter.onNext(charSequence.toString());
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+
+                    }
+
+                };
+
+                mQueryEditText.addTextChangedListener(watcher);
+                emitter.setCancellable(new Cancellable() {
+                    @Override
+                    public void cancel() throws Exception {
+                        mQueryEditText.removeTextChangedListener(watcher);
+                    }
+                });
+
+            }
+        });
+            return textChangeObservable;
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
+
         Observable<String> searchTextObservable = createButtonClickObservable();
-
         searchTextObservable
-
                 .observeOn(AndroidSchedulers.mainThread())
-
                 .doOnNext(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
@@ -83,7 +125,33 @@ public class CheeseActivity extends BaseSearchActivity {
                     }
                 })
                 .observeOn(Schedulers.io())
+                .map(new Function<String, List<String>>() {
+                    @Override
+                    public List<String> apply(String query) {
+                        return mCheeseSearchEngine.search(query);
+                    }
+                })
 
+                .observeOn(AndroidSchedulers.mainThread())
+
+                .subscribe(new Consumer<List<String>>() {
+                    @Override
+                    public void accept(List<String> result) {
+                        hideProgressBar();
+                        showResult(result);
+                    }
+                });
+
+        Observable<String> createTextObservable = createTextChangeObservable();
+        createTextObservable
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        showProgressBar();
+                    }
+                })
+                .observeOn(Schedulers.io())
                 .map(new Function<String, List<String>>() {
                     @Override
                     public List<String> apply(String query) {
@@ -101,4 +169,10 @@ public class CheeseActivity extends BaseSearchActivity {
                     }
                 });
     }
+
+
+
+
+
+
 }
