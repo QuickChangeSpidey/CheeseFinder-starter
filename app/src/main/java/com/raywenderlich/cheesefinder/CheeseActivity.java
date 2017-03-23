@@ -41,6 +41,7 @@ import io.reactivex.schedulers.Schedulers;
 public class CheeseActivity extends BaseSearchActivity {
 
     private Observable<String> createButtonClickObservable() {
+
         return Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(final ObservableEmitter<String> emitter) throws Exception {
@@ -101,7 +102,14 @@ public class CheeseActivity extends BaseSearchActivity {
     protected void onStart() {
         super.onStart();
         //Create Button Observable
-        Observable<String> searchTextObservable = createButtonClickObservable();
+
+        Observable<String> buttonClickStream = createButtonClickObservable();
+        Observable<String> textChangeStream = createTextChangeObservable();
+
+        Observable<String> searchTextObservable = Observable.merge(textChangeStream, buttonClickStream);
+
+
+
         searchTextObservable
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<String>() {
@@ -128,31 +136,30 @@ public class CheeseActivity extends BaseSearchActivity {
                 });
 
 
-        Observable<String> createTextObservable = createTextChangeObservable();
-        createTextObservable
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnNext(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        showProgressBar();
-                    }
-                })
-                .observeOn(Schedulers.io())
-                .map(new Function<String, List<String>>() {
-                    @Override
-                    public List<String> apply(String query) {
-                        return mCheeseSearchEngine.search(query);
-                    }
-                })
-
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<String>>() {
-                    @Override
-                    public void accept(List<String> result) {
-                        hideProgressBar();
-                        showResult(result);
-                    }
-                });
+//        createTextObservable
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .doOnNext(new Consumer<String>() {
+//                    @Override
+//                    public void accept(String s) throws Exception {
+//                        showProgressBar();
+//                    }
+//                })
+//                .observeOn(Schedulers.io())
+//                .map(new Function<String, List<String>>() {
+//                    @Override
+//                    public List<String> apply(String query) {
+//                        return mCheeseSearchEngine.search(query);
+//                    }
+//                })
+//
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Consumer<List<String>>() {
+//                    @Override
+//                    public void accept(List<String> result) {
+//                        hideProgressBar();
+//                        showResult(result);
+//                    }
+//                });
     }
 
 }
